@@ -16,3 +16,4 @@ The motivation for this is to ultimately produce a project that focuses on the b
 * How about making `./domain` into a lambda layer? How would this increase the size of the lambda as the folders grow?
 * How about making `./domain` into a npm package that is loaded in `case-service` as a library?
 * HMW create a generic interface that will route ANY request to the specific [Lambda](src/base/lambda.ts) class.
+* How can I sell this to other engineers? 
