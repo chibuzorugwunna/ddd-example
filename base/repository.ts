@@ -1,6 +1,6 @@
-import { Aggregate } from "./aggregate";
+import { AggregateRoot } from "./aggregate-root";
 
 export interface Repository {
-    save<A extends Aggregate>(aggregates: A[]): Promise<void>;
-    findById<A extends Aggregate>(aggregateClass: new () => A, id: string): Promise<Aggregate>
+    save<A extends AggregateRoot>(aggregates: A[]): Promise<void>;
+    findById<A extends AggregateRoot>(aggregateClass: new () => A, id: string): Promise<AggregateRoot>
 }

@@ -1,2 +1,2 @@
-export { Case } from './case'
+export { CaseCreated } from './case-created'
 export { CreateCaseCommand } from './create-case-command'

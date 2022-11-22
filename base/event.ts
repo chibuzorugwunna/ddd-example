@@ -1,6 +1,6 @@
-import { Aggregate } from "./aggregate";
+import { AggregateRoot } from "./aggregate-root";
 
-export abstract class Event<T extends Aggregate> {
+export abstract class Event<T extends AggregateRoot> {
     abstract readonly eventName: string
     abstract readonly aggregate: T
 

@@ -1,7 +1,6 @@
-import { Aggregate } from './aggregate';
-import { Event } from './event'
+import { AggregateRoot } from './aggregate-root';
 
-export interface Command<E extends Event<Aggregate>> {
+export interface Command {
     execute(...args: []): Promise<void>
-    commit(event: E): Promise<void>
+    commit(aggregate: AggregateRoot): Promise<void>
 }

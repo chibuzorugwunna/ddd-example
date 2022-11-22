@@ -1,4 +1,4 @@
-export { Aggregate } from './aggregate'
+export { AggregateRoot } from './aggregate-root'
 export { Event } from './event'
 export { EventPublisher } from './event-publisher'
 export { Command } from './command'
