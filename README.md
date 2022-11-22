@@ -1,10 +1,11 @@
 ## Motivation
 
-The motivation for this is to ultimately produce a project that focuses on the business problem and is self-documenting. It will;
-* Be inspired by domain-driven design and the onion architecture.
-* Be completely independent and isolated from technology.
-* Be very self-explanatory for both engineers and (somewhat) non-engineers.
-* Significantly reduce repetitions.
+The motivation for this is to ultimately produce a project that focuses on the business problem and is self-documenting. 
+
+* It will be inspired by domain-driven design and the onion architecture.
+* It will be completely independent and isolated from technology.
+* It will be very self-explanatory for both engineers and (somewhat) non-engineers.
+* It should significantly reduce repetitions.
 
 ### Other considerations
 * Create a SIMPLE custom template that will facilitate;
