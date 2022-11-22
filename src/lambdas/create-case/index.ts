@@ -7,12 +7,12 @@ import { Lambda, Middleware, ResponseDto, EventDto } from "../../base"
 export class CreateCaseLambda extends Lambda {
     protected schema: any
     protected middlewares: Middleware[] = []
-    private response: ResponseDto
+    private case: Case
 
     async execute(eventDto: EventDto): Promise<void> {
         super.execute(eventDto)
 
-        this.response = await Case.create(
+        this.case = await Case.create(
             new CreateCaseCommand(
                 new DynamoDBRepository(),
                 new EventService()
@@ -21,6 +21,8 @@ export class CreateCaseLambda extends Lambda {
     }
 
     getResponse(): ResponseDto {
-        return this.response
+        return {
+            id: this.case.id
+        }
     }
 }
