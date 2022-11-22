@@ -1,10 +1,10 @@
 import { EventDto } from "./event-dto"
-import { LambdaMiddleware } from "./lambda-middleware"
+import { Middleware } from "./middleware"
 import { ResponseDto } from "./response-dto"
 
 export abstract class Lambda {
     protected abstract readonly schema: any
-    protected abstract readonly middlewares: LambdaMiddleware[]
+    protected abstract readonly middlewares: Middleware[]
 
     /**
      * Runs validation against the specified JSON-schema

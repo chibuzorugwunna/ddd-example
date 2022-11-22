@@ -1,7 +1,7 @@
-import { Command } from "../../base/command";
+import { Command } from "../base/command";
 import { CaseCreated } from "./case-created";
-import { Repository } from "../../base/repository";
-import { EventPublisher } from "../../base/event-publisher";
+import { Repository } from "../base/repository";
+import { EventPublisher } from "../base/event-publisher";
 import { Case } from "../case";
 
 export class CreateCaseCommand implements Command {

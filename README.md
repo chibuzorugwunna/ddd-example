@@ -5,4 +5,13 @@
 * To produce a project where every core business logic is completely independent and isolated from technology.
 * To significantly reduce repetitions.
 * To increase focus on business problems.
-* Can we create our own SIMPLE custom template? And have a generic solution that transforms our custom template into a SAM template?
+
+
+### Other considerations?
+* Create a SIMPLE custom template that will facilitate;
+    - Bundling of code based on the
+    - Can be transformed to a SAM template.
+
+### Questions
+* How about making `./domain` into a lambda layer? How would this increase the size of the lambda as these folders grow?
+* HMW create a generic interface that will routes ANY request to the specific [Lambda](src/base/lambda.ts) class.

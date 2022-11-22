@@ -1,4 +1,4 @@
-import { AggregateRoot } from "../base"
+import { AggregateRoot } from "./base"
 import { CreateCaseCommand } from "./case-creation"
 
 export class Case extends AggregateRoot {
