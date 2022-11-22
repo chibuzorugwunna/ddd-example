@@ -13,4 +13,4 @@ Represents evidence that an action was taken
 An interface for publishing events
 
 ### Repository
-An interface for storage repositories - typically databases.
+An interface for facilitating the persisting of (aggregate) state.
