@@ -1,5 +1,6 @@
 
-import { Case, CreateCaseCommand } from "../../../domain"
+import { Case } from "../../../domain/case"
+import { CreateCaseCommand } from "../../../domain/case-creation"
 import { DynamoDBRepository } from "../../infrastructure/repositories/dynamodb-repository"
 import { EventService } from "../../infrastructure/services/event-service"
 import { Lambda, LambdaMiddleware, ResponseDto, EventDto } from "../base"
@@ -24,11 +25,3 @@ class CreateCaseLambda extends Lambda {
         return this.response
     }
 }
-
-// new HandlerLoader().load(ExampleService).doSomething()
-
-// // load handler
-// // run schema validation
-// // run middlewares
-// // run execute
-// // get response
