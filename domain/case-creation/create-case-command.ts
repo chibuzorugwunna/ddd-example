@@ -3,11 +3,13 @@ import { CaseCreated } from "./case-created";
 import { Repository } from "../base/repository";
 import { EventPublisher } from "../base/event-publisher";
 import { Case } from "../case";
+import {injectable, inject} from "tsyringe";
 
+@injectable()
 export class CreateCaseCommand implements Command {
     constructor(
-        readonly repository: Repository,
-        readonly eventPublisher: EventPublisher,
+        @inject("Repository") readonly repository: Repository,
+        @inject("EventPublisher") readonly eventPublisher: EventPublisher,
     ) { }
 
     async execute(): Promise<void> {

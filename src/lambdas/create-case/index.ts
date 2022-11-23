@@ -1,10 +1,13 @@
 import { Case } from "../../../domain/case"
 import { CreateCaseCommand } from "../../../domain/case-creation"
-import { DynamoDBRepository } from "../../repositories/dynamodb-repository"
-import { EventService } from '../../services/event-service'
 import { Lambda, Middleware, ResponseDto, EventDto } from "../../base"
 import _schema from './schema.json'
+import "reflect-metadata"
+import { registry, container } from "tsyringe"
 
+@registry([
+    {token: "CreateCaseCommand", useToken: CreateCaseCommand}
+])
 export class CreateCaseLambda extends Lambda {
     protected schema = _schema
     protected middlewares: Middleware[] = []
@@ -13,12 +16,8 @@ export class CreateCaseLambda extends Lambda {
     async execute(eventDto: EventDto): Promise<void> {
         super.execute(eventDto)
 
-        this.case = await Case.create(
-            new CreateCaseCommand(
-                new DynamoDBRepository(),
-                new EventService()
-            )
-        )
+        const createCaseCommand = container.resolve<CreateCaseCommand>("CreateCaseCommand"); 
+        this.case = await Case.create(createCaseCommand)
     }
 
     getResponse(): ResponseDto {
