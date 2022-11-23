@@ -3,9 +3,10 @@ import { CreateCaseCommand } from "../../../domain/case-creation"
 import { DynamoDBRepository } from "../../repositories/dynamodb-repository"
 import { EventService } from '../../services/event-service'
 import { Lambda, Middleware, ResponseDto, EventDto } from "../../base"
+import _schema from './schema.json'
 
 export class CreateCaseLambda extends Lambda {
-    protected schema: any
+    protected schema = _schema
     protected middlewares: Middleware[] = []
     private case: Case
 
