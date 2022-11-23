@@ -1,3 +1,6 @@
+## What problem is this trying to solve?
+[todo]
+
 ## Motivation
 
 The motivation for this is to ultimately produce a project that focuses on the business problem and is self-documenting. 
@@ -17,3 +20,10 @@ The motivation for this is to ultimately produce a project that focuses on the b
 * How about making `./domain` into a npm package that is loaded in `case-service` as a library?
 * HMW create a generic interface that will route ANY request to the specific [Lambda](src/base/lambda.ts) class.
 * How can I sell this to other engineers? 
+
+
+## How would this improve how developers write code
+
+Engineers would likely do the following;
+
+Create the Event -> Create the AggregateRoot -> Create the Command -> Create the Lambda and dependencies
