@@ -9,8 +9,8 @@ import { registry, container } from "tsyringe"
 @injectable()
 export class CreateCaseCommand implements Command {
     constructor(
-        @inject("Repository") readonly repository: Repository,
-        @inject("EventPublisher") readonly eventPublisher: EventPublisher,
+        @inject("DynamoDBRepository") readonly repository: Repository,
+        @inject("EventService") readonly eventPublisher: EventPublisher,
     ) { }
 
     async execute(): Promise<void> {
