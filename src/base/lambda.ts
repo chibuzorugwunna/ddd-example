@@ -6,8 +6,8 @@ import { EventService } from '../services/event-service'
 import { registry } from "tsyringe";
 
 @registry([
-    {token: "Lambda", useToken: DynamoDBRepository},
-    {token: "Lambda", useToken: EventService}
+    {token: "Repository", useToken: DynamoDBRepository},
+    {token: "EventPublisher", useToken: EventService}
 ])
 export abstract class Lambda {
     protected abstract readonly schema: any

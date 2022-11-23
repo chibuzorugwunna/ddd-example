@@ -6,7 +6,7 @@ import "reflect-metadata"
 import { registry, container } from "tsyringe"
 
 @registry([
-    {token: "Lambda", useToken: CreateCaseCommand}
+    {token: "CreateCaseCommand", useToken: CreateCaseCommand}
 ])
 export class CreateCaseLambda extends Lambda {
     protected schema = _schema
@@ -16,7 +16,7 @@ export class CreateCaseLambda extends Lambda {
     async execute(eventDto: EventDto): Promise<void> {
         super.execute(eventDto)
 
-        const createCaseCommand = container.resolve<CreateCaseCommand>("Lambda"); 
+        const createCaseCommand = container.resolve<CreateCaseCommand>("CreateCaseCommand"); 
         this.case = await Case.create(createCaseCommand)
     }
 

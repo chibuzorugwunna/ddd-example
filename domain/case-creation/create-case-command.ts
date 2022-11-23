@@ -4,13 +4,12 @@ import { Repository } from "../base/repository";
 import { EventPublisher } from "../base/event-publisher";
 import { Case } from "../case";
 import {injectable, inject} from "tsyringe";
-import { registry, container } from "tsyringe"
 
 @injectable()
 export class CreateCaseCommand implements Command {
     constructor(
-        @inject("DynamoDBRepository") readonly repository: Repository,
-        @inject("EventService") readonly eventPublisher: EventPublisher,
+        @inject("Repository") readonly repository: Repository,
+        @inject("EventPublisher") readonly eventPublisher: EventPublisher,
     ) { }
 
     async execute(): Promise<void> {
