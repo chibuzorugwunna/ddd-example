@@ -1,7 +1,14 @@
 import { EventDto } from "./event-dto"
 import { Middleware } from "./middleware"
 import { ResponseDto } from "./response-dto"
+import { DynamoDBRepository } from "../repositories/dynamodb-repository"
+import { EventService } from '../services/event-service'
+import { registry } from "tsyringe";
 
+@registry([
+    {token: "Lambda", useToken: DynamoDBRepository},
+    {token: "Lambda", useToken: EventService}
+])
 export abstract class Lambda {
     protected abstract readonly schema: any
     protected abstract readonly middlewares: Middleware[]

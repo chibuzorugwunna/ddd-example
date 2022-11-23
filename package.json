@@ -10,7 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "aws-sdk": "2.1259.0"
+    "aws-sdk": "2.1259.0",
+    "tsyringe": "^4.7.0"
   },
   "devDependencies": {
     "@types/aws-lambda": "8.10.108",
